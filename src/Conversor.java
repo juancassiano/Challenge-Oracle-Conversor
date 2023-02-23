@@ -25,8 +25,7 @@ public class Conversor {
 		String escolha = JOptionPane.showInputDialog(null, "Escolha a moeda para a qual você deseja girar seu dinheiro","Moeda",
 				JOptionPane.PLAIN_MESSAGE, null, tipoConversao,null)
 				.toString();
-		
-		Moeda converterMoeda = new Moeda();
+			Moeda converterMoeda = new Moeda();
 			switch(escolha) {
 				case "Dolar para Real":
 					resultado = converterMoeda.converterDolarEmReal(valor);
@@ -75,7 +74,7 @@ public class Conversor {
 			JOptionPane.showMessageDialog(null, resultado);
 			
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(null, "O valor digitado não é um número");
+			JOptionPane.showMessageDialog(null, "O valor digitado não é um número", "Erro", JOptionPane.ERROR_MESSAGE);
 		} finally {
 			int resposta = JOptionPane.showConfirmDialog(null, "Deseja realizar outra conversão?");
 			if(resposta == JOptionPane.YES_OPTION) {
