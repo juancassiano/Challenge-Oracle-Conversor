@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class Moeda {
 	public static final double REAL_DOLAR = 0.19;
@@ -43,6 +44,56 @@ public class Moeda {
 	}
 	public double converterPesoChilenoEmReal(double valorInserido) {
 		return valorInserido * PESO_CHILENO_REAL;
+	}
+	
+	public void converterMoeda(String escolha, double valor) {
+		double resultado = 0;
+		switch(escolha) {
+		case "Dolar para Real":
+			resultado = converterDolarEmReal(valor);
+			break;
+			
+		case "Euro para Real":
+			resultado = converterEuroEmReal(valor);
+			break;
+			
+		case "Libra Esterlina para Real":
+			resultado = converterLibraEsterlinaEmReal(valor);
+			break;
+			
+		case "Peso Argentino para Real":
+			resultado = converterPesoArgentinoEmReal(valor);
+			break;
+			
+		case "Peso Chileno para Real":
+			resultado = converterPesoChilenoEmReal(valor);
+			break;
+			
+		case "Real para Dolar":
+			resultado = converterRealEmDolar(valor);
+			break;
+			
+		case "Real para Euro":
+			resultado = converterRealEmEuro(valor);
+			break;
+			
+		case "Real para Libra Esterlina":
+			resultado = converterRealEmLibraEsterlina(valor);
+			break;
+			
+		case "Real para Peso Argentino":
+			resultado = converterRealEmPesoArgentino(valor);
+			break;
+			
+		case "Real para Peso Chileno":
+			resultado = converterRealEmPesoChileno(valor);
+			break;
+			
+		default:
+			break;
+	}
+		JOptionPane.showMessageDialog(null, resultado);
+		
 	}
 	
 }

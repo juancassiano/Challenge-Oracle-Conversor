@@ -6,72 +6,43 @@ public class Conversor {
 	public static void main(String[] args) {
 		
 		Double valor = null;
-		Double resultado = null;
-
+		Double temperatura = null;
+		
 		String[] opcoes = {"Conversor de Moeda", "Conversor de Temperatura"};
-		String[] tipoConversao = {"Dolar para Real", "Euro para Real", "Libra Esterlina para Real",
+		String[] tipoConversaoMoeda = {"Dolar para Real", "Euro para Real", "Libra Esterlina para Real",
 				"Peso Argentino para Real", "Peso Chileno para Real", "Real para Dolar", "Real para Euro",
 				"Real para Libra Esterlina", "Real para Peso Argentino", "Real para Peso Chileno" };
+		
+		String[] tipoConversaoTemperatura= {"Celcius para Farenheint", "Celcius para Kelvin",
+				"Farenheint para Celcius", "Farenheint para Kelvin", "Kelvin para Celcius", "Kelvin para Farenheint" };
 		
 		String type = JOptionPane.showInputDialog(null, "Escolha uma opção:","Menu",
 				JOptionPane.PLAIN_MESSAGE, null,opcoes,null)
 						.toString();
-					
-	try {
-			String input = JOptionPane.showInputDialog("Insira um Valor:");
-			valor = Double.parseDouble(input);
 		
-		
-		String escolha = JOptionPane.showInputDialog(null, "Escolha a moeda para a qual você deseja girar seu dinheiro","Moeda",
-				JOptionPane.PLAIN_MESSAGE, null, tipoConversao,null)
-				.toString();
-			Moeda converterMoeda = new Moeda();
-			switch(escolha) {
-				case "Dolar para Real":
-					resultado = converterMoeda.converterDolarEmReal(valor);
-					break;
-					
-				case "Euro para Real":
-					resultado = converterMoeda.converterEuroEmReal(valor);
-					break;
-					
-				case "Libra Esterlina para Real":
-					resultado = converterMoeda.converterLibraEsterlinaEmReal(valor);
-					break;
-					
-				case "Peso Argentino para Real":
-					resultado = converterMoeda.converterPesoArgentinoEmReal(valor);
-					break;
-					
-				case "Peso Chileno para Real":
-					resultado = converterMoeda.converterPesoChilenoEmReal(valor);
-					break;
-					
-				case "Real para Dolar":
-					resultado = converterMoeda.converterRealEmDolar(valor);
-					break;
-					
-				case "Real para Euro":
-					resultado = converterMoeda.converterRealEmEuro(valor);
-					break;
-					
-				case "Real para Libra Esterlina":
-					resultado = converterMoeda.converterRealEmLibraEsterlina(valor);
-					break;
-					
-				case "Real para Peso Argentino":
-					resultado = converterMoeda.converterRealEmPesoArgentino(valor);
-					break;
-					
-				case "Real para Peso Chileno":
-					resultado = converterMoeda.converterRealEmPesoChileno(valor);
-					break;
-					
-				default:
-					break;
-			}
+		try {		
 			
-			JOptionPane.showMessageDialog(null, resultado);
+			if(type.contains("Conversor de Moeda")) {
+				String escolha = JOptionPane.showInputDialog(null, "Escolha a moeda para a qual você deseja converter seu dinheiro","Moeda",
+						JOptionPane.PLAIN_MESSAGE, null, tipoConversaoMoeda,null)
+						.toString();
+					
+					String input = JOptionPane.showInputDialog("Insira um Valor:");
+					valor = Double.parseDouble(input);
+					
+					Moeda conversor = new Moeda();
+					conversor.converterMoeda(escolha, valor);
+			}else {
+				String escolha = JOptionPane.showInputDialog(null, "Escolha a temperatura que deseja converter","Temperatura",
+						JOptionPane.PLAIN_MESSAGE, null, tipoConversaoTemperatura,null)
+						.toString();
+				
+					String input = JOptionPane.showInputDialog("Insira uma Temperatura:");
+					temperatura = Double.parseDouble(input);
+					
+					Temperatura conversor = new Temperatura();
+					conversor.converterTemperatura(escolha, temperatura);
+			}
 			
 		} catch (NumberFormatException e) {
 			JOptionPane.showMessageDialog(null, "O valor digitado não é um número", "Erro", JOptionPane.ERROR_MESSAGE);
