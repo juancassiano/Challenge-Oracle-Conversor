@@ -93,7 +93,7 @@ public class Moeda {
 		default:
 			break;
 	}
-		JOptionPane.showMessageDialog(null, resultado);
+		JOptionPane.showMessageDialog(null, "O valor da conversão é: " + resultado);
 		
 	}
 	

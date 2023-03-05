@@ -61,6 +61,6 @@ public class Temperatura {
 			break;
 		}
 		
-		JOptionPane.showMessageDialog(null, resultado);
+		JOptionPane.showMessageDialog(null, "O resultado da conversão é: " + resultado);
 	}
 }
