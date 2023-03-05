@@ -38,7 +38,5 @@ Como desafio extra, implementei a funcionalidade de converter temperatura, com a
       - Converter Kelvin para Celcius
 
 
-<img src="https://raw.githubusercontent.com/juancassiano/Challenge-Oracle-Conversor/main/src/assets/apresentacao.gif" width=800>
-
 
 <img align="right" src="https://raw.githubusercontent.com/juancassiano/Challenge-Oracle-Conversor/main/src/assets/java_badge.png" width=200>
