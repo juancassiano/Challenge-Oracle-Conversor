@@ -39,7 +39,7 @@ Como desafio extra, implementei a funcionalidade de converter temperatura, com a
 
 
 //colocar o gif
-<img src="">
+<img src="https://raw.githubusercontent.com/juancassiano/Challenge-Oracle-Conversor/main/src/assets/apresentacao.gif">
 
 
 <img align="right" src="https://raw.githubusercontent.com/juancassiano/Challenge-Oracle-Conversor/main/src/assets/java_badge.png" width=200>
