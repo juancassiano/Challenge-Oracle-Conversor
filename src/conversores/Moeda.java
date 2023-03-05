@@ -1,3 +1,4 @@
+package conversores;
 import javax.swing.JOptionPane;
 
 public class Moeda {
